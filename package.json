@@ -1,8 +1,8 @@
 {
-  "type": "module",
   "name": "menu-scan-api",
   "description": "Api para la plataforma Menu Scan",
   "version": "1.0.0",
+  "type": "module",
   "main": "app.js",
   "directories": {
     "test": "test"
@@ -51,6 +51,9 @@
     "prisma": "^5.0.0",
     "standard": "^17.0.0",
     "tap": "^16.1.0"
+  },
+  "engines": {
+    "node": "18.x"
   },
   "tap": {
     "node-arg": [
