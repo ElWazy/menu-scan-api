@@ -1,0 +1,65 @@
+{
+  "type": "module",
+  "name": "menu-scan-api",
+  "description": "Api para la plataforma Menu Scan",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElWazy/menu-scan-api.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "contributors": [
+    {
+      "name": "Tasmvanum",
+      "email": "tasmvanum@foo.com",
+      "url": "https://menuscan.lutrias.cl"
+    },
+    {
+      "name": "ElWazy",
+      "email": "ElCazero.Fer@gmail.com",
+      "url": "https://elwazy.cl"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElWazy/menu-scan-api/issues"
+  },
+  "homepage": "https://github.com/ElWazy/menu-scan-api#readme",
+  "scripts": {
+    "test": "tap \"test/**/*.test.js\"",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js",
+    "pretest": "standard",
+    "lint": "standard --fix"
+  },
+  "dependencies": {
+    "@fastify/autoload": "^5.0.0",
+    "@fastify/sensible": "^5.0.0",
+    "@prisma/client": "^5.0.0",
+    "fastify": "^4.0.0",
+    "fastify-cli": "^5.7.1",
+    "fastify-plugin": "^4.0.0"
+  },
+  "devDependencies": {
+    "@istanbuljs/esm-loader-hook": "0.2.0",
+    "prisma": "^5.0.0",
+    "standard": "^17.0.0",
+    "tap": "^16.1.0"
+  },
+  "tap": {
+    "node-arg": [
+      "--no-warnings",
+      "--experimental-loader",
+      "@istanbuljs/esm-loader-hook"
+    ]
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
+}
