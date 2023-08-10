@@ -16,3 +16,29 @@ model User {
     emailVerified DateTime?
     image         String?
 }
+
+model Menu{
+  id  String  @id @default(cuid())
+  name String?
+  logo String?
+  banner String?
+}
+
+model Product{
+  id String  @id @default(cuid())
+  name String?
+  price Int @default(0)
+  createdAt DateTime @default(now())
+  category Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+
+
+  @@index([categoryId])
+}
+
+model Category{
+  id String  @id @default(cuid())
+  name String?
+  products Product[]
+
+}
