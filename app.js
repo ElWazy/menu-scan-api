@@ -1,6 +1,7 @@
 import path from 'path'
 import AutoLoad from '@fastify/autoload'
 import { fileURLToPath } from 'url'
+import cors from '@fastify/cors'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -9,9 +10,9 @@ const __dirname = path.dirname(__filename)
 export const options = {}
 
 export default async function (fastify, opts) {
-  // Place here your custom code!
-
-  // Do not touch the following lines
+  fastify.register(cors, { 
+    origin: true
+  })
 
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused
